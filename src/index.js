@@ -5,9 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import configureStore,{history} from './store/configureStore'
 
-//const initialState = window.initialReduxState
-const initialState = {}
-
+const initialState = window.initialReduxState
 const store = configureStore(history,initialState)
 
 ReactDOM.render(<App history={history} store={store}/>, document.getElementById('root'));

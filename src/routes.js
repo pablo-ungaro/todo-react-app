@@ -8,7 +8,8 @@ const Routes = () => (
     <Switch>
       <Route exact path="/todos" component={TodoList} />
       <Route exact path="/todo/new" component={TodoNew} />
-      
+      <Route exact path="/" component={TodoList} />
+
       <Route component={() => <div>Not Found</div>} />
     </Switch>
   </div>
