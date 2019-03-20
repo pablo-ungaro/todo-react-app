@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../../store/todo/actions'
-import { Table, Button, Card } from 'antd';
+import { Table, Card } from 'antd'
+import { Link } from 'react-router-dom'
+
 
 
 const columns = [{
@@ -28,16 +30,12 @@ const columns = [{
   )
 }];
 class TodoList extends Component {
-
-  goToAddPage = ()=>{
-    this.props.history.push('/todo/new')
-  }
   
   render() {
     return (
       <Card
       title="Tarefas"
-      extra={<a href="javascript:void(0)" onClick={this.goToAddPage}>Adicionar</a>}
+      extra={<Link to="/todo/new">Adicionar</Link>}
       style={{margin:'50px'}}
       >
         <div>

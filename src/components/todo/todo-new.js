@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Form, Input, Button, Card } from 'antd'
 import { connect } from 'react-redux'
 import * as actions from '../../store/todo/actions'
+import { Link } from 'react-router-dom'
+
 
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
@@ -23,10 +25,6 @@ class TodoNew extends Component {
         this.props.history.push(`/todos`)
       }
     });
-  }
-
-  goToHomePage = ()=>{
-    this.props.history.push('/todos')
   }
 
   render() {
@@ -58,7 +56,7 @@ class TodoNew extends Component {
     return (
       <Card
       title="Nova Tarefa"
-      extra={<a href="javascript:void(0)" onClick={this.goToHomePage}>Principal</a>}
+      extra={<Link to="/todos">Principal</Link>}
       style={{margin:'50px'}}
       >
         <Form {...formItemLayout} onSubmit={this.handleSubmit} >
